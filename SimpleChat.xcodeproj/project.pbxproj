@@ -15,6 +15,8 @@
 		DA6D750425373E5000827778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6D750325373E5000827778 /* Assets.xcassets */; };
 		DA6D750725373E5000827778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA6D750525373E5000827778 /* LaunchScreen.storyboard */; };
 		DA6D751625373F4900827778 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D751525373F4900827778 /* ChatView.swift */; };
+		DA6D751B253823C300827778 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D751A253823C300827778 /* Chat.swift */; };
+		DA6D751E2538241600827778 /* ChatBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D751D2538241600827778 /* ChatBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		DA6D750625373E5000827778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA6D750825373E5000827778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA6D751525373F4900827778 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		DA6D751A253823C300827778 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		DA6D751D2538241600827778 /* ChatBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 		DA6D751425373F1C00827778 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA6D751A253823C300827778 /* Chat.swift */,
+				DA6D751D2538241600827778 /* ChatBrain.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,7 +240,9 @@
 			files = (
 				DA6D751625373F4900827778 /* ChatView.swift in Sources */,
 				DA6D74FF25373E4F00827778 /* ChatController.swift in Sources */,
+				DA6D751E2538241600827778 /* ChatBrain.swift in Sources */,
 				DA6D74FB25373E4F00827778 /* AppDelegate.swift in Sources */,
+				DA6D751B253823C300827778 /* Chat.swift in Sources */,
 				DA6D74FD25373E4F00827778 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
