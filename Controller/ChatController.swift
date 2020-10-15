@@ -10,11 +10,21 @@ import UIKit
 class ChatController: UIViewController {
     
     private var chatView: ChatView!
+    private var chatBrain = ChatBrain()
     
     var list = ["hai","hai"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if chatBrain.chatArray[0].person .isEmpty{
+            for i in 0...1 {
+                print(chatBrain.chatArray[i].bot)
+            }
+        }
+        if chatBrain.chatArray[2].bot .isEmpty {
+            print(chatBrain.chatArray[2].person)
+        }
         
         self.chatView = ChatView(frame: self.view.frame)
         self.view = self.chatView
@@ -24,7 +34,7 @@ class ChatController: UIViewController {
         
         self.chatView.chatTable.separatorStyle = .none
         
-        self.title = "Chat"
+        self.title = "YANA"
     }
 
 }
@@ -40,13 +50,13 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.textAlignment = .right
         cell.textLabel?.text = list[indexPath.row]
-        print(list.count)// <-
+        //print(list.count)// <-
        
         if list.count == 2 {
-            print(list.count)// <-
+            //print(list.count)// <-
             cell.textLabel?.textAlignment = .left
             list.append("apa kabar 👋😊")
-            print(list)// <-
+            //print(list)// <-
             cell.textLabel?.text = list[indexPath.row]
         }
         
