@@ -29,3 +29,11 @@ struct ChatBrain {
 
 }
 
+//if chatBrain.chatArray[0].person .isEmpty{
+//    for i in 0...1 {
+//        print(chatBrain.chatArray[i].bot)
+//    }
+//}
+//if chatBrain.chatArray[2].bot .isEmpty {
+//    print(chatBrain.chatArray[2].person)
+//}
