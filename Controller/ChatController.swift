@@ -66,7 +66,12 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = self.list[indexPath.row]
+        let num = indexPath.row
+        cell.textLabel?.text = self.list[num]
+        if num == 3 {
+            cell.textLabel?.textAlignment = .right
+            cell.textLabel?.text = list[3]
+        }
         return cell
     }
 }
