@@ -39,7 +39,7 @@ class ChatController: UIViewController {
     
     @objc private func firstOpti(){
         chatView.border.isHidden = true
-        list += ["Alhamdulillah Baik"]
+        list += ["Alhamdulillah Baik","Wah bagus","Bagaimana keadaan mu?"]
         
         DispatchQueue.main.async {
             self.chatView.chatTable.reloadData()
@@ -66,11 +66,22 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
         let num = indexPath.row
+        
         cell.textLabel?.text = self.list[num]
+        
         if num == 3 {
             cell.textLabel?.textAlignment = .right
             cell.textLabel?.text = list[3]
+        }
+        if num == 4 {
+            cell.textLabel?.textAlignment = .left
+            cell.textLabel?.text = list[4]
+        }
+        if num == 5 {
+            cell.textLabel?.textAlignment = .left
+            cell.textLabel?.text = list[5]
         }
         return cell
     }
