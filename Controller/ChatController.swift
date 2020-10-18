@@ -28,6 +28,7 @@ class ChatController: UIViewController {
         self.title = "YANA"
         
         self.chatView.border.isHidden = true
+//        self.chatView.secondBorder.isHidden = true
         
         Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
             self.chatView.border.isHidden = false
@@ -45,16 +46,24 @@ class ChatController: UIViewController {
             self.chatView.chatTable.reloadData()
         }
         print(list)
+        
+//        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+//            self.chatView.secondBorder.isHidden = false
+//        }
     }
     
     @objc private func secondOpti(){
         chatView.border.isHidden = true
-        list += ["Buruk Bangsat!"]
+        list += ["Buruk 🙁","Mohon maaf sebelumnya","dan Bagaimana keadaan mu?"]
         
         DispatchQueue.main.async {
             self.chatView.chatTable.reloadData()
         }
         print(list)
+        
+//        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+//            self.chatView.secondBorder.isHidden = false
+//        }
     }
 }
 
