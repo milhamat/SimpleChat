@@ -11,23 +11,61 @@ struct ChatBrain {
     let chatArray = [
         Chat(bot: "Hai", person: ""),
         Chat(bot: "Apa Kabar", person: ""),
-        Chat(bot: "", person: "Baik ")
+        Chat(bot: "Aku", person: "Baik ")
     ]
     
-    func getString() -> String{
-        var chat = ""
-        for i in 0...2{
-            if chatArray[i].bot != "" && chatArray[i].person .isEmpty{
-                chat = chatArray[i].bot
-            }
-            if chatArray[i].bot .isEmpty && chatArray[i].person != "" {
-                chat = chatArray[i].person
-            }
-        }
-        return chat
+    var count = -1
+    
+    func getString() -> String {
+        let next = chatArray[count].bot
+        return next
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    mutating func nextString() {
+//            count += 1
+//    }
+
+//func countDownToZero(num: Int) {
+//    print(num)
+//    if num > 0 {
+//        countDownToZero(num: num - 1)
+//    }
+//}
+
+
+//    func getString() -> String{
+//        var chat = ""
+//        for i in 0...2{
+//            if chatArray[i].bot != "" && chatArray[i].person .isEmpty{
+//                chat = chatArray[i].bot
+//            }
+//            if chatArray[i].bot .isEmpty && chatArray[i].person != "" {
+//                chat = chatArray[i].person
+//            }
+//        }
+//        return chat
+//    }
+
+
 
 //if chatBrain.chatArray[0].person .isEmpty{
 //    for i in 0...1 {

@@ -12,12 +12,8 @@ class ChatController: UIViewController {
     private var chatView: ChatView!
     private var chatBrain = ChatBrain()
     
-    var list = ["hai","hai"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         
         self.chatView = ChatView(frame: self.view.frame)
         self.view = self.chatView
@@ -28,30 +24,74 @@ class ChatController: UIViewController {
         self.chatView.chatTable.separatorStyle = .none
         
         self.title = "YANA"
+        
+        self.chatView.border.isHidden = true
+        
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+            self.chatView.border.isHidden = false
+        }
     }
-
+    
 }
 
 extension ChatController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return chatBrain.chatArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.textAlignment = .right
-        cell.textLabel?.text = list[indexPath.row]
-       
-        if list.count == 2 {
-            cell.textLabel?.textAlignment = .left
-            list.append("apa kabar 👋😊")
-            cell.textLabel?.text = list[indexPath.row]
-        }
-        
+        cell.textLabel?.text = chatBrain.chatArray[indexPath.row].bot
         return cell
     }
-    
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+//        cell.textLabel?.textAlignment = .right
+//        cell.textLabel?.text = list[indexPath.row]
+//
+//        if list.count == 2 {
+//            cell.textLabel?.textAlignment = .left
+//            list.append("apa kabar 👋😊")
+//            cell.textLabel?.text = list[indexPath.row]
+//        }
+
+
+//        for i in 0...2{
+//            if chatBrain.chatArray[i].bot != "" && chatBrain.chatArray[i].person .isEmpty{
+//                print(chatBrain.chatArray[i].bot)
+//            }
+//            if chatBrain.chatArray[i].bot .isEmpty && chatBrain.chatArray[i].person != "" {
+//                print(chatBrain.chatArray[i].person)
+//            }
+//        }
+
+//        for i in 0...2 {
+//            var a = 0
+//            a = i
+//            print("\(a)")
+//        }
+
+//for index in stride(from: 2, to: 0, by: -1) {
+//}
+
+
+//for _ in 0...2 {
+////        chatBrain.nextString()
+//    var num = 0.0
+//    Timer.scheduledTimer(withTimeInterval: 0.1 * num ,repeats: false) { (timer) in
+//        self.chatBrain.count += 1
+//        cell.textLabel?.text = self.chatBrain.getString()
+//    }
+//    num += 1
+//}
