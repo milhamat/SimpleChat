@@ -8,7 +8,7 @@
 import Foundation
 
 struct ChatBrain {
-    let chatArray = [
+    var chatArray = [
         Chat(bot: "Hai", person: ""),
         Chat(bot: "Apa Kabar", person: ""),
         Chat(bot: "Aku", person: "Baik ")

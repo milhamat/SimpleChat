@@ -65,7 +65,7 @@ class ChatView: UIView {
             make.bottom.equalTo(self.safeAreaLayoutGuide)
             make.left.equalTo(self.safeAreaLayoutGuide)
             make.right.equalTo(self.safeAreaLayoutGuide)
-            make.height.equalTo(150)
+            make.height.equalTo(80)
             make.width.equalTo(self.safeAreaLayoutGuide)
         }
         

@@ -12,6 +12,8 @@ class ChatController: UIViewController {
     private var chatView: ChatView!
     private var chatBrain = ChatBrain()
     
+    var list = ["Hai", "Apa kabar", "Kamu Baik Hari ini ?"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,19 +32,41 @@ class ChatController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
             self.chatView.border.isHidden = false
         }
+        
+        self.chatView.firstButton.addTarget(self, action: #selector(firstOpti), for: .touchUpInside)
+        self.chatView.secondButton.addTarget(self, action: #selector(secondOpti), for: .touchUpInside)
     }
     
+    @objc private func firstOpti(){
+        chatView.border.isHidden = true
+        list += ["Alhamdulillah Baik"]
+        
+        DispatchQueue.main.async {
+            self.chatView.chatTable.reloadData()
+        }
+        print(list)
+    }
+    
+    @objc private func secondOpti(){
+        chatView.border.isHidden = true
+        list += ["Buruk Bangsat!"]
+        
+        DispatchQueue.main.async {
+            self.chatView.chatTable.reloadData()
+        }
+        print(list)
+    }
 }
 
 extension ChatController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatBrain.chatArray.count
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = chatBrain.chatArray[indexPath.row].bot
+        cell.textLabel?.text = self.list[indexPath.row]
         return cell
     }
 }
@@ -61,8 +85,8 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
 //        cell.textLabel?.text = list[indexPath.row]
 //
 //        if list.count == 2 {
-//            cell.textLabel?.textAlignment = .left
 //            list.append("apa kabar 👋😊")
+//            cell.textLabel?.textAlignment = .left
 //            cell.textLabel?.text = list[indexPath.row]
 //        }
 
