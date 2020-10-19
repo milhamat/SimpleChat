@@ -81,10 +81,15 @@ class ChatView: UIView {
         self.backgroundColor = .white
         
         self.addSubview(chatTable)
+        
         self.addSubview(border)
         self.addSubview(firstButton)
         self.addSubview(secondButton)
+        
         self.addSubview(secondBorder)
+        self.addSubview(thirdButton)
+        self.addSubview(forthButton)
+        self.addSubview(fifthButton)
         
         self.chatTable.snp.makeConstraints { (make) in
             make.top.equalTo(self.safeAreaLayoutGuide)
@@ -115,28 +120,28 @@ class ChatView: UIView {
         
 //------------------------------------------------------------------------
         
-//        self.secondBorder.snp.makeConstraints { (make) in
-//            make.bottom.equalTo(self.safeAreaLayoutGuide)
-//            make.left.equalTo(self.safeAreaLayoutGuide)
-//            make.right.equalTo(self.safeAreaLayoutGuide)
-//            make.height.equalTo(150)
-//            make.width.equalTo(self.safeAreaLayoutGuide)
-//        }
-//        
-//        self.thirdButton.snp.makeConstraints { (make) in
-//            make.centerX.equalTo(self.secondBorder)
-//            make.top.equalTo(self.secondBorder).offset(5)
-//        }
-//        
-//        self.forthButton.snp.makeConstraints { (make) in
-//            make.top.equalTo(self.thirdButton.snp.bottom)
-//            make.centerX.equalTo(self.secondBorder)
-//        }
-//        
-//        self.fifthButton.snp.makeConstraints { (make) in
-//            make.top.equalTo(self.forthButton.snp.bottom)
-//            make.centerX.equalTo(self.secondBorder)
-//        }
+        self.secondBorder.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self.safeAreaLayoutGuide)
+            make.left.equalTo(self.safeAreaLayoutGuide)
+            make.right.equalTo(self.safeAreaLayoutGuide)
+            make.height.equalTo(120)
+            make.width.equalTo(self.safeAreaLayoutGuide)
+        }
+        
+        self.thirdButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.secondBorder)
+            make.top.equalTo(self.secondBorder).offset(5)
+        }
+        
+        self.forthButton.snp.makeConstraints { (make) in
+            make.top.equalTo(self.thirdButton.snp.bottom)
+            make.centerX.equalTo(self.secondBorder)
+        }
+        
+        self.fifthButton.snp.makeConstraints { (make) in
+            make.top.equalTo(self.forthButton.snp.bottom)
+            make.centerX.equalTo(self.secondBorder)
+        }
     }
     
 }
