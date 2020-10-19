@@ -28,10 +28,18 @@ class ChatController: UIViewController {
         self.title = "YANA"
         
         self.chatView.border.isHidden = true
+        
         self.chatView.secondBorder.isHidden = true
         self.chatView.forthButton.isHidden = true
         self.chatView.fifthButton.isHidden = true
         self.chatView.sixthButton.isHidden = true
+        
+        self.chatView.thirdBorder.isHidden = true
+        self.chatView.seventButton.isHidden = true
+        self.chatView.eightButton.isHidden = true
+        
+        self.chatView.forthBorder.isHidden = true
+        self.chatView.ninethButton.isHidden = true
         
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
             self.chatView.border.isHidden = false
@@ -39,6 +47,7 @@ class ChatController: UIViewController {
         
         self.chatView.firstButton.addTarget(self, action: #selector(firstOpti), for: .touchUpInside)
         self.chatView.secondButton.addTarget(self, action: #selector(secondOpti), for: .touchUpInside)
+        
         self.chatView.thirdButton.addTarget(self, action: #selector(thirdOpti), for: .touchUpInside)
         self.chatView.forthButton.addTarget(self, action: #selector(forthOpti), for: .touchUpInside)
         self.chatView.fifthButton.addTarget(self, action: #selector(fifthOpti), for: .touchUpInside)
@@ -74,25 +83,33 @@ class ChatController: UIViewController {
     
     @objc private func thirdOpti(){
         chatView.secondBorder.isHidden = true
-        list += ["entah lah, aku merasa sedih","terimakasih sudah bertahan"]
+        list += ["entah lah, aku merasa sedih",
+                 "terimakasih sudah bertahan",
+                 "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
     }
     
     @objc private func forthOpti(){
         chatView.secondBorder.isHidden = true
-        list += ["entah lah, aku merasa kecewa","terimakasih sudah bertahan"]
+        list += ["entah lah, aku merasa kecewa",
+                 "terimakasih sudah bertahan",
+                 "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
     }
     
     @objc private func fifthOpti(){
         chatView.secondBorder.isHidden = true
-        list += ["entah lah, aku ingin melukai diri sendiri","terimakasih sudah bertahan"]
+        list += ["entah lah, aku ingin melukai diri sendiri",
+                 "terimakasih sudah bertahan",
+                 "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
     }
     
     @objc private func sixthOpti(){
         chatView.secondBorder.isHidden = true
-        list += ["entah lah, aku merasa hampa","terimakasih sudah bertahan"]
+        list += ["entah lah, aku merasa hampa",
+                 "terimakasih sudah bertahan",
+                 "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
     }
 }
