@@ -16,7 +16,7 @@ class ChatView: UIView {
         return chat
     }()
     
-//------------------------------------------------------------------------
+// MARK: - Border Declaration
     
     let border: UIView = {
         let view = UIView()
@@ -24,21 +24,21 @@ class ChatView: UIView {
         return view
     }()
     
-    let firstButton: UIButton = {
+    let buttonOne: UIButton = {
         let button = UIButton()
         button.setTitle("Baik", for: .normal)
         button.tintColor = .white
         return button
     }()
     
-    let secondButton: UIButton = {
+    let buttonTwo: UIButton = {
         let button = UIButton()
         button.setTitle("Buruk", for: .normal)
         button.tintColor = .white
         return button
     }()
     
-//------------------------------------------------------------------------
+// MARK: - Second Border Declaration
     
     let secondBorder: UIView = {
         let view = UIView()
@@ -46,23 +46,67 @@ class ChatView: UIView {
         return view
     }()
     
-    let thirdButton: UIButton = {
+    let buttonThree: UIButton = {
         let button = UIButton()
-        button.setTitle("Choose1", for: .normal)
+        button.setTitle("Aku merasa Sedih", for: .normal)
         button.tintColor = .white
         return button
     }()
     
-    let forthButton: UIButton = {
+    let buttonFour: UIButton = {
         let button = UIButton()
-        button.setTitle("Choose2", for: .normal)
+        button.setTitle("Aku merasa Kecewa", for: .normal)
         button.tintColor = .white
         return button
     }()
     
-    let fifthButton: UIButton = {
+    let buttonFive: UIButton = {
         let button = UIButton()
-        button.setTitle("Choose3", for: .normal)
+        button.setTitle("Aku merasa ingin melukai diri", for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
+    let buttonSix: UIButton = {
+        let button = UIButton()
+        button.setTitle("Aku merasa Hampa", for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
+    // MARK: - Third Border Declaration
+    
+    let thirdBorder: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    
+    let buttonSeven: UIButton = {
+        let button = UIButton()
+        button.setTitle("Terimakasih, Yana", for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
+    let buttonEight: UIButton = {
+        let button = UIButton()
+        button.setTitle("Lewati", for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
+    // MARK: - Forth Border Declaration
+    
+    let forthBorder: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    
+    let buttonNine: UIButton = {
+        let button = UIButton()
+        button.setTitle("Baiklah, aku ingin melihat lebih jauh", for: .normal)
         button.tintColor = .white
         return button
     }()
@@ -83,13 +127,21 @@ class ChatView: UIView {
         self.addSubview(chatTable)
         
         self.addSubview(border)
-        self.addSubview(firstButton)
-        self.addSubview(secondButton)
+        self.addSubview(buttonOne)
+        self.addSubview(buttonTwo)
         
         self.addSubview(secondBorder)
-        self.addSubview(thirdButton)
-        self.addSubview(forthButton)
-        self.addSubview(fifthButton)
+        self.addSubview(buttonThree)
+        self.addSubview(buttonFour)
+        self.addSubview(buttonFive)
+        self.addSubview(buttonSix)
+        
+        self.addSubview(thirdBorder)
+        self.addSubview(buttonSeven)
+        self.addSubview(buttonEight)
+        
+        self.addSubview(forthBorder)
+        self.addSubview(buttonNine)
         
         self.chatTable.snp.makeConstraints { (make) in
             make.top.equalTo(self.safeAreaLayoutGuide)
@@ -98,7 +150,7 @@ class ChatView: UIView {
             make.bottom.equalTo(self.safeAreaLayoutGuide)
         }
         
-//------------------------------------------------------------------------
+// MARK: - Border AutoLayout
         
         self.border.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.safeAreaLayoutGuide)
@@ -108,40 +160,78 @@ class ChatView: UIView {
             make.width.equalTo(self.safeAreaLayoutGuide)
         }
         
-        self.firstButton.snp.makeConstraints { (make) in
+        self.buttonOne.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.border)
             make.top.equalTo(self.border).offset(5)
         }
         
-        self.secondButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.firstButton.snp.bottom)
+        self.buttonTwo.snp.makeConstraints { (make) in
+            make.top.equalTo(self.buttonOne.snp.bottom)
             make.centerX.equalTo(self.border)
         }
         
-//------------------------------------------------------------------------
+// MARK: - Second Border AutoLayout
         
         self.secondBorder.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.safeAreaLayoutGuide)
             make.left.equalTo(self.safeAreaLayoutGuide)
             make.right.equalTo(self.safeAreaLayoutGuide)
-            make.height.equalTo(120)
+            make.height.equalTo(150)
             make.width.equalTo(self.safeAreaLayoutGuide)
         }
         
-        self.thirdButton.snp.makeConstraints { (make) in
+        self.buttonThree.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.secondBorder)
             make.top.equalTo(self.secondBorder).offset(5)
         }
         
-        self.forthButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.thirdButton.snp.bottom)
+        self.buttonFour.snp.makeConstraints { (make) in
+            make.top.equalTo(self.buttonThree.snp.bottom)
             make.centerX.equalTo(self.secondBorder)
         }
         
-        self.fifthButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.forthButton.snp.bottom)
+        self.buttonFive.snp.makeConstraints { (make) in
+            make.top.equalTo(self.buttonFour.snp.bottom)
             make.centerX.equalTo(self.secondBorder)
         }
+        
+        self.buttonSix.snp.makeConstraints { (make) in
+            make.top.equalTo(self.buttonFive.snp.bottom)
+            make.centerX.equalTo(self.secondBorder)
+        }
+        
+// MARK: - Third Border AutoLayout
+        self.thirdBorder.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self.safeAreaLayoutGuide)
+            make.left.equalTo(self.safeAreaLayoutGuide)
+            make.right.equalTo(self.safeAreaLayoutGuide)
+            make.height.equalTo(80)
+            make.width.equalTo(self.safeAreaLayoutGuide)
+        }
+        
+        self.buttonSeven.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.thirdBorder)
+            make.top.equalTo(self.thirdBorder).offset(5)
+        }
+        
+        self.buttonEight.snp.makeConstraints { (make) in
+            make.top.equalTo(self.buttonSeven.snp.bottom)
+            make.centerX.equalTo(self.border)
+        }
+// MARK: - Forth Border AutoLayout
+        self.forthBorder.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self.safeAreaLayoutGuide)
+            make.left.equalTo(self.safeAreaLayoutGuide)
+            make.right.equalTo(self.safeAreaLayoutGuide)
+            make.height.equalTo(60)
+            make.width.equalTo(self.safeAreaLayoutGuide)
+        }
+
+        self.buttonNine.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.forthBorder)
+            make.top.equalTo(self.forthBorder).offset(5)
+        }
+
     }
     
 }
