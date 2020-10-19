@@ -24,14 +24,14 @@ class ChatView: UIView {
         return view
     }()
     
-    let firstButton: UIButton = {
+    let buttonOne: UIButton = {
         let button = UIButton()
         button.setTitle("Baik", for: .normal)
         button.tintColor = .white
         return button
     }()
     
-    let secondButton: UIButton = {
+    let buttonTwo: UIButton = {
         let button = UIButton()
         button.setTitle("Buruk", for: .normal)
         button.tintColor = .white
@@ -46,28 +46,28 @@ class ChatView: UIView {
         return view
     }()
     
-    let thirdButton: UIButton = {
+    let buttonThree: UIButton = {
         let button = UIButton()
         button.setTitle("Aku merasa Sedih", for: .normal)
         button.tintColor = .white
         return button
     }()
     
-    let forthButton: UIButton = {
+    let buttonFour: UIButton = {
         let button = UIButton()
         button.setTitle("Aku merasa Kecewa", for: .normal)
         button.tintColor = .white
         return button
     }()
     
-    let fifthButton: UIButton = {
+    let buttonFive: UIButton = {
         let button = UIButton()
         button.setTitle("Aku merasa ingin melukai diri", for: .normal)
         button.tintColor = .white
         return button
     }()
     
-    let sixthButton: UIButton = {
+    let buttonSix: UIButton = {
         let button = UIButton()
         button.setTitle("Aku merasa Hampa", for: .normal)
         button.tintColor = .white
@@ -82,14 +82,14 @@ class ChatView: UIView {
         return view
     }()
     
-    let seventButton: UIButton = {
+    let buttonSeven: UIButton = {
         let button = UIButton()
         button.setTitle("Terimakasih, Yana", for: .normal)
         button.tintColor = .white
         return button
     }()
     
-    let eightButton: UIButton = {
+    let buttonEight: UIButton = {
         let button = UIButton()
         button.setTitle("Lewati", for: .normal)
         button.tintColor = .white
@@ -104,7 +104,7 @@ class ChatView: UIView {
         return view
     }()
     
-    let ninethButton: UIButton = {
+    let buttonNine: UIButton = {
         let button = UIButton()
         button.setTitle("Baiklah, aku ingin melihat lebih jauh", for: .normal)
         button.tintColor = .white
@@ -127,21 +127,21 @@ class ChatView: UIView {
         self.addSubview(chatTable)
         
         self.addSubview(border)
-        self.addSubview(firstButton)
-        self.addSubview(secondButton)
+        self.addSubview(buttonOne)
+        self.addSubview(buttonTwo)
         
         self.addSubview(secondBorder)
-        self.addSubview(thirdButton)
-        self.addSubview(forthButton)
-        self.addSubview(fifthButton)
-        self.addSubview(sixthButton)
+        self.addSubview(buttonThree)
+        self.addSubview(buttonFour)
+        self.addSubview(buttonFive)
+        self.addSubview(buttonSix)
         
         self.addSubview(thirdBorder)
-        self.addSubview(seventButton)
-        self.addSubview(eightButton)
+        self.addSubview(buttonSeven)
+        self.addSubview(buttonEight)
         
         self.addSubview(forthBorder)
-        self.addSubview(ninethButton)
+        self.addSubview(buttonNine)
         
         self.chatTable.snp.makeConstraints { (make) in
             make.top.equalTo(self.safeAreaLayoutGuide)
@@ -160,13 +160,13 @@ class ChatView: UIView {
             make.width.equalTo(self.safeAreaLayoutGuide)
         }
         
-        self.firstButton.snp.makeConstraints { (make) in
+        self.buttonOne.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.border)
             make.top.equalTo(self.border).offset(5)
         }
         
-        self.secondButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.firstButton.snp.bottom)
+        self.buttonTwo.snp.makeConstraints { (make) in
+            make.top.equalTo(self.buttonOne.snp.bottom)
             make.centerX.equalTo(self.border)
         }
         
@@ -180,23 +180,23 @@ class ChatView: UIView {
             make.width.equalTo(self.safeAreaLayoutGuide)
         }
         
-        self.thirdButton.snp.makeConstraints { (make) in
+        self.buttonThree.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.secondBorder)
             make.top.equalTo(self.secondBorder).offset(5)
         }
         
-        self.forthButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.thirdButton.snp.bottom)
+        self.buttonFour.snp.makeConstraints { (make) in
+            make.top.equalTo(self.buttonThree.snp.bottom)
             make.centerX.equalTo(self.secondBorder)
         }
         
-        self.fifthButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.forthButton.snp.bottom)
+        self.buttonFive.snp.makeConstraints { (make) in
+            make.top.equalTo(self.buttonFour.snp.bottom)
             make.centerX.equalTo(self.secondBorder)
         }
         
-        self.sixthButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.fifthButton.snp.bottom)
+        self.buttonSix.snp.makeConstraints { (make) in
+            make.top.equalTo(self.buttonFive.snp.bottom)
             make.centerX.equalTo(self.secondBorder)
         }
         
@@ -209,13 +209,13 @@ class ChatView: UIView {
             make.width.equalTo(self.safeAreaLayoutGuide)
         }
         
-        self.seventButton.snp.makeConstraints { (make) in
+        self.buttonSeven.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.thirdBorder)
             make.top.equalTo(self.thirdBorder).offset(5)
         }
         
-        self.eightButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.seventButton.snp.bottom)
+        self.buttonEight.snp.makeConstraints { (make) in
+            make.top.equalTo(self.buttonSeven.snp.bottom)
             make.centerX.equalTo(self.border)
         }
 // MARK: - Forth Border AutoLayout
@@ -227,7 +227,7 @@ class ChatView: UIView {
             make.width.equalTo(self.safeAreaLayoutGuide)
         }
 
-        self.ninethButton.snp.makeConstraints { (make) in
+        self.buttonNine.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.forthBorder)
             make.top.equalTo(self.forthBorder).offset(5)
         }

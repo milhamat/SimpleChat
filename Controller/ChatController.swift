@@ -30,28 +30,35 @@ class ChatController: UIViewController {
         self.chatView.border.isHidden = true
         
         self.chatView.secondBorder.isHidden = true
-        self.chatView.forthButton.isHidden = true
-        self.chatView.fifthButton.isHidden = true
-        self.chatView.sixthButton.isHidden = true
+        self.chatView.buttonFour.isHidden = true
+        self.chatView.buttonFive.isHidden = true
+        self.chatView.buttonSix.isHidden = true
         
         self.chatView.thirdBorder.isHidden = true
-        self.chatView.seventButton.isHidden = true
-        self.chatView.eightButton.isHidden = true
+        self.chatView.buttonSeven.isHidden = true
+        self.chatView.buttonEight.isHidden = true
         
         self.chatView.forthBorder.isHidden = true
-        self.chatView.ninethButton.isHidden = true
+        self.chatView.buttonNine.isHidden = true
         
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
             self.chatView.border.isHidden = false
         }
         
-        self.chatView.firstButton.addTarget(self, action: #selector(firstOpti), for: .touchUpInside)
-        self.chatView.secondButton.addTarget(self, action: #selector(secondOpti), for: .touchUpInside)
+        self.chatView.buttonOne.addTarget(self, action: #selector(firstOpti), for: .touchUpInside)
+        self.chatView.buttonTwo.addTarget(self, action: #selector(secondOpti), for: .touchUpInside)
         
-        self.chatView.thirdButton.addTarget(self, action: #selector(thirdOpti), for: .touchUpInside)
-        self.chatView.forthButton.addTarget(self, action: #selector(forthOpti), for: .touchUpInside)
-        self.chatView.fifthButton.addTarget(self, action: #selector(fifthOpti), for: .touchUpInside)
-        self.chatView.sixthButton.addTarget(self, action: #selector(sixthOpti), for: .touchUpInside)
+        self.chatView.buttonThree.addTarget(self, action: #selector(thirdOpti), for: .touchUpInside)
+        self.chatView.buttonFour.addTarget(self, action: #selector(forthOpti), for: .touchUpInside)
+        self.chatView.buttonFive.addTarget(self, action: #selector(fifthOpti), for: .touchUpInside)
+        self.chatView.buttonSix.addTarget(self, action: #selector(sixthOpti), for: .touchUpInside)
+        
+        self.chatView.buttonSeven.addTarget(self, action: #selector(sevenOpti), for: .touchUpInside)
+        self.chatView.buttonEight.addTarget(self, action: #selector(eightOpti), for: .touchUpInside)
+        
+        self.chatView.buttonNine.addTarget(self, action: #selector(nineOpti), for: .touchUpInside)
+        
+        
         
     }
     
@@ -62,9 +69,9 @@ class ChatController: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
             self.chatView.secondBorder.isHidden = false
-            self.chatView.forthButton.isHidden = false
-            self.chatView.fifthButton.isHidden = false
-            self.chatView.sixthButton.isHidden = false
+            self.chatView.buttonFour.isHidden = false
+            self.chatView.buttonFive.isHidden = false
+            self.chatView.buttonSix.isHidden = false
         }
     }
     
@@ -75,9 +82,9 @@ class ChatController: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
             self.chatView.secondBorder.isHidden = false
-            self.chatView.forthButton.isHidden = false
-            self.chatView.fifthButton.isHidden = false
-            self.chatView.sixthButton.isHidden = false
+            self.chatView.buttonFour.isHidden = false
+            self.chatView.buttonFive.isHidden = false
+            self.chatView.buttonSix.isHidden = false
         }
     }
     
@@ -87,6 +94,12 @@ class ChatController: UIViewController {
                  "terimakasih sudah bertahan",
                  "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+            self.chatView.thirdBorder.isHidden = false
+            self.chatView.buttonSeven.isHidden = false
+            self.chatView.buttonEight.isHidden = false
+        }
     }
     
     @objc private func forthOpti(){
@@ -95,6 +108,12 @@ class ChatController: UIViewController {
                  "terimakasih sudah bertahan",
                  "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+            self.chatView.thirdBorder.isHidden = false
+            self.chatView.buttonSeven.isHidden = false
+            self.chatView.buttonEight.isHidden = false
+        }
     }
     
     @objc private func fifthOpti(){
@@ -103,6 +122,12 @@ class ChatController: UIViewController {
                  "terimakasih sudah bertahan",
                  "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+            self.chatView.thirdBorder.isHidden = false
+            self.chatView.buttonSeven.isHidden = false
+            self.chatView.buttonEight.isHidden = false
+        }
     }
     
     @objc private func sixthOpti(){
@@ -111,6 +136,31 @@ class ChatController: UIViewController {
                  "terimakasih sudah bertahan",
                  "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+            self.chatView.thirdBorder.isHidden = false
+            self.chatView.buttonSeven.isHidden = false
+            self.chatView.buttonEight.isHidden = false
+        }
+    }
+    
+    @objc private func sevenOpti(){
+        chatView.thirdBorder.isHidden = true
+        list += ["test","Kami tau hidupmu berat","yuk kita masuk ke dalam"]
+        chatView.chatTable.reloadData()
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+            self.chatView.forthBorder.isHidden = false
+            self.chatView.buttonNine.isHidden = false
+        }
+    }
+    
+    @objc private func eightOpti(){
+        // Skip to next Screen
+    }
+    
+    @objc private func nineOpti(){
+        // Skip to next Screen
     }
 }
 
@@ -124,25 +174,27 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         let num = indexPath.row
-        
-        cell.textLabel?.text = self.list[num]
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+            cell.textLabel?.text = self.list[num]
+        }
         
         if num == 3 {
             cell.textLabel?.textAlignment = .right
-            cell.textLabel?.text = list[3]
-        }
-        if num == 4 {
-            cell.textLabel?.textAlignment = .left
-            cell.textLabel?.text = list[4]
-        }
-        if num == 5 {
-            cell.textLabel?.textAlignment = .left
-            cell.textLabel?.text = list[5]
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+                cell.textLabel?.text = self.list[3]
+            }
         }
         if num == 6 {
             cell.textLabel?.textAlignment = .right
-            cell.textLabel?.text = list[6]
-            print(list[6])
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+                cell.textLabel?.text = self.list[6]
+            }
+        }
+        if num == 9 {
+            cell.textLabel?.textAlignment = .right
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+                cell.textLabel?.text = self.list[9]
+            }
         }
         return cell
     }
@@ -156,7 +208,14 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
 
 
 
-
+//        if num == 4 {
+//            cell.textLabel?.textAlignment = .left
+//            cell.textLabel?.text = list[4]
+//        }
+//        if num == 5 {
+//            cell.textLabel?.textAlignment = .left
+//            cell.textLabel?.text = list[5]
+//        }
 
 //        cell.textLabel?.textAlignment = .right
 //        cell.textLabel?.text = list[indexPath.row]
