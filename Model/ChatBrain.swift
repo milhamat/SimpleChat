@@ -40,6 +40,8 @@ struct ChatBrain {
 
 
 
+
+
 //    mutating func nextString() {
 //            count += 1
 //    }

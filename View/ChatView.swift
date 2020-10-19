@@ -16,7 +16,7 @@ class ChatView: UIView {
         return chat
     }()
     
-//------------------------------------------------------------------------
+// MARK: - Border Declaration
     
     let border: UIView = {
         let view = UIView()
@@ -38,7 +38,7 @@ class ChatView: UIView {
         return button
     }()
     
-//------------------------------------------------------------------------
+// MARK: - Second Border Declaration
     
     let secondBorder: UIView = {
         let view = UIView()
@@ -48,21 +48,28 @@ class ChatView: UIView {
     
     let thirdButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Choose1", for: .normal)
+        button.setTitle("Aku merasa Sedih", for: .normal)
         button.tintColor = .white
         return button
     }()
     
     let forthButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Choose2", for: .normal)
+        button.setTitle("Aku merasa Kecewa", for: .normal)
         button.tintColor = .white
         return button
     }()
     
     let fifthButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Choose3", for: .normal)
+        button.setTitle("Aku merasa ingin melukai diri", for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
+    let sixthButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Aku merasa Hampa", for: .normal)
         button.tintColor = .white
         return button
     }()
@@ -90,6 +97,7 @@ class ChatView: UIView {
         self.addSubview(thirdButton)
         self.addSubview(forthButton)
         self.addSubview(fifthButton)
+        self.addSubview(sixthButton)
         
         self.chatTable.snp.makeConstraints { (make) in
             make.top.equalTo(self.safeAreaLayoutGuide)
@@ -98,7 +106,7 @@ class ChatView: UIView {
             make.bottom.equalTo(self.safeAreaLayoutGuide)
         }
         
-//------------------------------------------------------------------------
+// MARK: - Border AutoLayout
         
         self.border.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.safeAreaLayoutGuide)
@@ -118,13 +126,13 @@ class ChatView: UIView {
             make.centerX.equalTo(self.border)
         }
         
-//------------------------------------------------------------------------
+// MARK: - Second Border AutoLayout
         
         self.secondBorder.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.safeAreaLayoutGuide)
             make.left.equalTo(self.safeAreaLayoutGuide)
             make.right.equalTo(self.safeAreaLayoutGuide)
-            make.height.equalTo(120)
+            make.height.equalTo(150)
             make.width.equalTo(self.safeAreaLayoutGuide)
         }
         
@@ -140,6 +148,11 @@ class ChatView: UIView {
         
         self.fifthButton.snp.makeConstraints { (make) in
             make.top.equalTo(self.forthButton.snp.bottom)
+            make.centerX.equalTo(self.secondBorder)
+        }
+        
+        self.sixthButton.snp.makeConstraints { (make) in
+            make.top.equalTo(self.fifthButton.snp.bottom)
             make.centerX.equalTo(self.secondBorder)
         }
     }

@@ -12,7 +12,7 @@ class ChatController: UIViewController {
     private var chatView: ChatView!
     private var chatBrain = ChatBrain()
     
-    var list = ["Hai", "Apa kabar", "Kamu Baik Hari ini ?"]
+    var list = ["Hallo", "Apa Kabar", "Kamu Baik Hari ini ?"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,7 @@ class ChatController: UIViewController {
         self.chatView.secondBorder.isHidden = true
         self.chatView.forthButton.isHidden = true
         self.chatView.fifthButton.isHidden = true
+        self.chatView.sixthButton.isHidden = true
         
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
             self.chatView.border.isHidden = false
@@ -41,6 +42,7 @@ class ChatController: UIViewController {
         self.chatView.thirdButton.addTarget(self, action: #selector(thirdOpti), for: .touchUpInside)
         self.chatView.forthButton.addTarget(self, action: #selector(forthOpti), for: .touchUpInside)
         self.chatView.fifthButton.addTarget(self, action: #selector(fifthOpti), for: .touchUpInside)
+        self.chatView.sixthButton.addTarget(self, action: #selector(sixthOpti), for: .touchUpInside)
         
     }
     
@@ -53,6 +55,7 @@ class ChatController: UIViewController {
             self.chatView.secondBorder.isHidden = false
             self.chatView.forthButton.isHidden = false
             self.chatView.fifthButton.isHidden = false
+            self.chatView.sixthButton.isHidden = false
         }
     }
     
@@ -65,19 +68,32 @@ class ChatController: UIViewController {
             self.chatView.secondBorder.isHidden = false
             self.chatView.forthButton.isHidden = false
             self.chatView.fifthButton.isHidden = false
+            self.chatView.sixthButton.isHidden = false
         }
     }
     
     @objc private func thirdOpti(){
-        
+        chatView.secondBorder.isHidden = true
+        list += ["entah lah, aku merasa sedih","terimakasih sudah bertahan"]
+        chatView.chatTable.reloadData()
     }
     
     @objc private func forthOpti(){
-        
+        chatView.secondBorder.isHidden = true
+        list += ["entah lah, aku merasa kecewa","terimakasih sudah bertahan"]
+        chatView.chatTable.reloadData()
     }
     
     @objc private func fifthOpti(){
-        
+        chatView.secondBorder.isHidden = true
+        list += ["entah lah, aku ingin melukai diri sendiri","terimakasih sudah bertahan"]
+        chatView.chatTable.reloadData()
+    }
+    
+    @objc private func sixthOpti(){
+        chatView.secondBorder.isHidden = true
+        list += ["entah lah, aku merasa hampa","terimakasih sudah bertahan"]
+        chatView.chatTable.reloadData()
     }
 }
 
@@ -105,6 +121,11 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
         if num == 5 {
             cell.textLabel?.textAlignment = .left
             cell.textLabel?.text = list[5]
+        }
+        if num == 6 {
+            cell.textLabel?.textAlignment = .right
+            cell.textLabel?.text = list[6]
+            print(list[6])
         }
         return cell
     }
