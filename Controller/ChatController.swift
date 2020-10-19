@@ -28,42 +28,56 @@ class ChatController: UIViewController {
         self.title = "YANA"
         
         self.chatView.border.isHidden = true
-//        self.chatView.secondBorder.isHidden = true
+        self.chatView.secondBorder.isHidden = true
+        self.chatView.forthButton.isHidden = true
+        self.chatView.fifthButton.isHidden = true
         
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
             self.chatView.border.isHidden = false
         }
         
         self.chatView.firstButton.addTarget(self, action: #selector(firstOpti), for: .touchUpInside)
         self.chatView.secondButton.addTarget(self, action: #selector(secondOpti), for: .touchUpInside)
+        self.chatView.thirdButton.addTarget(self, action: #selector(thirdOpti), for: .touchUpInside)
+        self.chatView.forthButton.addTarget(self, action: #selector(forthOpti), for: .touchUpInside)
+        self.chatView.fifthButton.addTarget(self, action: #selector(fifthOpti), for: .touchUpInside)
+        
     }
     
     @objc private func firstOpti(){
         chatView.border.isHidden = true
         list += ["Alhamdulillah Baik","Wah bagus","Bagaimana keadaan mu?"]
+        chatView.chatTable.reloadData()
         
-        DispatchQueue.main.async {
-            self.chatView.chatTable.reloadData()
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+            self.chatView.secondBorder.isHidden = false
+            self.chatView.forthButton.isHidden = false
+            self.chatView.fifthButton.isHidden = false
         }
-        print(list)
-        
-//        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
-//            self.chatView.secondBorder.isHidden = false
-//        }
     }
     
     @objc private func secondOpti(){
         chatView.border.isHidden = true
         list += ["Buruk 🙁","Mohon maaf sebelumnya","dan Bagaimana keadaan mu?"]
+        chatView.chatTable.reloadData()
         
-        DispatchQueue.main.async {
-            self.chatView.chatTable.reloadData()
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+            self.chatView.secondBorder.isHidden = false
+            self.chatView.forthButton.isHidden = false
+            self.chatView.fifthButton.isHidden = false
         }
-        print(list)
+    }
+    
+    @objc private func thirdOpti(){
         
-//        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
-//            self.chatView.secondBorder.isHidden = false
-//        }
+    }
+    
+    @objc private func forthOpti(){
+        
+    }
+    
+    @objc private func fifthOpti(){
+        
     }
 }
 
