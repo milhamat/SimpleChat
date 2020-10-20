@@ -9,9 +9,9 @@ import Foundation
 
 struct ChatBrain {
     var chatArray = [
-        Chat(bot: "Hai", person: ""),
-        Chat(bot: "Apa Kabar", person: ""),
-        Chat(bot: "Aku", person: "Baik ")
+        Sender(bot: "Hai", person: ""),
+        Sender(bot: "Apa Kabar", person: ""),
+        Sender(bot: "Aku", person: "Baik ")
     ]
     
     var count = -1

@@ -12,6 +12,7 @@ class ChatView: UIView {
     
     let chatTable: UITableView = {
         let chat = UITableView()
+//        chat.register(ChatTableViewCell.self, forCellReuseIdentifier: "cell")
         chat.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return chat
     }()

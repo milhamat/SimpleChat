@@ -146,7 +146,9 @@ class ChatController: UIViewController {
     
     @objc private func sevenOpti(){
         chatView.thirdBorder.isHidden = true
-        list += ["test","Kami tau hidupmu berat","yuk kita masuk ke dalam"]
+        list += ["Trimakasih YANA",
+                 "Kami tau hidupmu berat",
+                 "yuk kita masuk ke dalam"]
         chatView.chatTable.reloadData()
         
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
@@ -171,30 +173,26 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) //as! ChatTableViewCell
         
         let num = indexPath.row
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
             cell.textLabel?.text = self.list[num]
-        }
+//            cell.listArrayLabel.text = self.list[num]
         
         if num == 3 {
             cell.textLabel?.textAlignment = .right
-            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
-                cell.textLabel?.text = self.list[3]
-            }
+            cell.textLabel?.text = self.list[3]
+            
         }
         if num == 6 {
             cell.textLabel?.textAlignment = .right
-            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
-                cell.textLabel?.text = self.list[6]
-            }
+            cell.textLabel?.text = self.list[6]
+            
         }
         if num == 9 {
             cell.textLabel?.textAlignment = .right
-            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
-                cell.textLabel?.text = self.list[9]
-            }
+            cell.textLabel?.text = self.list[9]
+            
         }
         return cell
     }

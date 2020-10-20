@@ -9,14 +9,15 @@ import UIKit
 
 class ChatTableViewCell: UITableViewCell {
     
-    let leftTextLabel: UILabel = {
+    let listArrayLabel: UILabel = {
         let label = UILabel()
         return label
     }()
     
-    let rightTextLabel: UILabel = {
-        let label = UILabel()
-        return label
+    let textBuble: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
     }()
     
     override func awakeFromNib() {
@@ -35,13 +36,22 @@ class ChatTableViewCell: UITableViewCell {
     private func setupView() {
         self.backgroundColor = .white
         
-        self.addSubview(leftTextLabel)
+        self.addSubview(textBuble)
+        self.addSubview(listArrayLabel)
+       
         
-        self.leftTextLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self)
-            make.left.equalTo(self).offset(10)
-            make.bottom.equalTo(self)
+        self.textBuble.snp.makeConstraints { (make) in
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
+            make.left.equalTo(self.safeAreaLayoutGuide).offset(20)
+            make.height.equalTo(self.listArrayLabel).offset(10)
+            make.width.equalTo(self.listArrayLabel).offset(10)
         }
+        
+        self.listArrayLabel.snp.makeConstraints { (make) in
+            make.centerX.centerY.equalTo(self.textBuble)
+        }
+        
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
