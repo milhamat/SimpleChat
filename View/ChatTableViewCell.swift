@@ -17,6 +17,7 @@ class ChatTableViewCell: UITableViewCell {
     let textBuble: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
+        view.layer.cornerRadius = 10
         return view
     }()
     
@@ -29,6 +30,21 @@ class ChatTableViewCell: UITableViewCell {
         setupView()
     }
     
+    func configureCell(chatModel: ChatModel){
+        DispatchQueue.global().async {
+            Thread.sleep(forTimeInterval: chatModel.timeInterval)
+            
+            DispatchQueue.main.async {
+                self.listArrayLabel.text = chatModel.message
+                
+                if chatModel.sender == .user {
+                    self.listArrayLabel.textAlignment = .right
+                }
+            }
+        }
+        
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -36,19 +52,26 @@ class ChatTableViewCell: UITableViewCell {
     private func setupView() {
         self.backgroundColor = .white
         
-        self.addSubview(textBuble)
+//        self.addSubview(textBuble)
+//        self.textBuble.addSubview(listArrayLabel)
         self.addSubview(listArrayLabel)
        
         
-        self.textBuble.snp.makeConstraints { (make) in
-            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
-            make.left.equalTo(self.safeAreaLayoutGuide).offset(20)
-            make.height.equalTo(self.listArrayLabel).offset(10)
-            make.width.equalTo(self.listArrayLabel).offset(10)
-        }
+//        self.textBuble.snp.makeConstraints { (make) in
+//            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
+//            make.left.equalTo(self.safeAreaLayoutGuide).offset(20)
+//            make.height.equalTo(self.listArrayLabel).offset(10)
+//            make.width.equalTo(self.listArrayLabel).offset(20)
+//        }
         
         self.listArrayLabel.snp.makeConstraints { (make) in
-            make.centerX.centerY.equalTo(self.textBuble)
+//            make.centerX.centerY.equalTo(self.textBuble)
+            
+            make.top.bottom.equalTo(self)
+            make.left.equalTo(self).offset(20)
+            make.right.equalTo(self).offset(-20)
+            make.height.equalTo(50)
+               
         }
         
         
@@ -59,3 +82,5 @@ class ChatTableViewCell: UITableViewCell {
     }
 
 }
+
+
