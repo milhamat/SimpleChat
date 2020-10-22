@@ -11,12 +11,10 @@ class ChatController: UIViewController {
     
     private var chatView: ChatView!
     private var chatModel = [ChatModel]()
-//    private var chatBrain = ChatBrain()
-    
-//    var list = ["Hallo", "Apa Kabar", "Kamu Baik Hari ini ?"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         
         self.chatView = ChatView(frame: self.view.frame)
         self.view = self.chatView
@@ -26,7 +24,7 @@ class ChatController: UIViewController {
         
         self.chatView.chatTable.separatorStyle = .none
         
-        self.title = "YANA"
+//        self.title = "YANA"
         
         self.chatModel.append(contentsOf: ChatBrain.openingChat())
         
@@ -48,7 +46,7 @@ class ChatController: UIViewController {
             Thread.sleep(forTimeInterval: self.chatModel.last!.timeInterval)
         }
         
-        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
             self.chatView.border.isHidden = false
         }
         
@@ -64,20 +62,15 @@ class ChatController: UIViewController {
         self.chatView.buttonEight.addTarget(self, action: #selector(eightOpti), for: .touchUpInside)
         
         self.chatView.buttonNine.addTarget(self, action: #selector(nineOpti), for: .touchUpInside)
-        
-        
-        
-        
-        
+          
     }
     
     @objc private func firstOpti(_ Sender: UIButton){
         chatView.border.isHidden = true
         self.chatModel.append(contentsOf: ChatBrain.firstChatOption())
-//        list += ["Alhamdulillah Baik","Wah bagus","Bagaimana keadaan mu?"]
         chatView.chatTable.reloadData()
         
-        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
             self.chatView.secondBorder.isHidden = false
             self.chatView.buttonFour.isHidden = false
             self.chatView.buttonFive.isHidden = false
@@ -88,10 +81,9 @@ class ChatController: UIViewController {
     @objc private func secondOpti(){
         chatView.border.isHidden = true
         self.chatModel.append(contentsOf: ChatBrain.secondChatOption())
-//        list += ["Buruk 🙁","Mohon maaf sebelumnya","dan Bagaimana keadaan mu?"]
         chatView.chatTable.reloadData()
         
-        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
             self.chatView.secondBorder.isHidden = false
             self.chatView.buttonFour.isHidden = false
             self.chatView.buttonFive.isHidden = false
@@ -102,12 +94,9 @@ class ChatController: UIViewController {
     @objc private func thirdOpti(){
         chatView.secondBorder.isHidden = true
         self.chatModel.append(contentsOf: ChatBrain.thirdChatOption())
-//        list += ["entah lah, aku merasa sedih",
-//                 "terimakasih sudah bertahan",
-//                 "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
         
-        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
             self.chatView.thirdBorder.isHidden = false
             self.chatView.buttonSeven.isHidden = false
             self.chatView.buttonEight.isHidden = false
@@ -117,12 +106,9 @@ class ChatController: UIViewController {
     @objc private func forthOpti(){
         chatView.secondBorder.isHidden = true
         self.chatModel.append(contentsOf: ChatBrain.fourthChatOption())
-//        list += ["entah lah, aku merasa kecewa",
-//                 "terimakasih sudah bertahan",
-//                 "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
         
-        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
             self.chatView.thirdBorder.isHidden = false
             self.chatView.buttonSeven.isHidden = false
             self.chatView.buttonEight.isHidden = false
@@ -132,12 +118,9 @@ class ChatController: UIViewController {
     @objc private func fifthOpti(){
         chatView.secondBorder.isHidden = true
         self.chatModel.append(contentsOf: ChatBrain.fifthChatOption())
-//        list += ["entah lah, aku ingin melukai diri sendiri",
-//                 "terimakasih sudah bertahan",
-//                 "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
         
-        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
             self.chatView.thirdBorder.isHidden = false
             self.chatView.buttonSeven.isHidden = false
             self.chatView.buttonEight.isHidden = false
@@ -147,12 +130,9 @@ class ChatController: UIViewController {
     @objc private func sixthOpti(){
         chatView.secondBorder.isHidden = true
         self.chatModel.append(contentsOf: ChatBrain.sixthChatOption())
-//        list += ["entah lah, aku merasa hampa",
-//                 "terimakasih sudah bertahan",
-//                 "Tetaplah berjuang, karena Kami ada di sini"]
         chatView.chatTable.reloadData()
         
-        Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
             self.chatView.thirdBorder.isHidden = false
             self.chatView.buttonSeven.isHidden = false
             self.chatView.buttonEight.isHidden = false
@@ -162,9 +142,6 @@ class ChatController: UIViewController {
     @objc private func sevenOpti(){
         chatView.thirdBorder.isHidden = true
         self.chatModel.append(contentsOf: ChatBrain.seventhChatOption())
-//        list += ["Trimakasih YANA",
-//                 "Kami tau hidupmu berat",
-//                 "yuk kita masuk ke dalam"]
         chatView.chatTable.reloadData()
         
         Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { (timer) in
@@ -192,26 +169,6 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ChatTableViewCell
         
         cell.configureCell(chatModel: self.chatModel[indexPath.row])
-        
-//        let num = indexPath.row
-//            cell.textLabel?.text = self.list[num]
-////            cell.listArrayLabel.text = self.list[num]
-//
-//        if num == 3 {
-//            cell.textLabel?.textAlignment = .right
-//            cell.textLabel?.text = self.list[3]
-//
-//        }
-//        if num == 6 {
-//            cell.textLabel?.textAlignment = .right
-//            cell.textLabel?.text = self.list[6]
-//
-//        }
-//        if num == 9 {
-//            cell.textLabel?.textAlignment = .right
-//            cell.textLabel?.text = self.list[9]
-//
-//        }
         return cell
     }
 }
@@ -222,52 +179,3 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
 
 
 
-
-
-//        if num == 4 {
-//            cell.textLabel?.textAlignment = .left
-//            cell.textLabel?.text = list[4]
-//        }
-//        if num == 5 {
-//            cell.textLabel?.textAlignment = .left
-//            cell.textLabel?.text = list[5]
-//        }
-
-//        cell.textLabel?.textAlignment = .right
-//        cell.textLabel?.text = list[indexPath.row]
-//
-//        if list.count == 2 {
-//            list.append("apa kabar 👋😊")
-//            cell.textLabel?.textAlignment = .left
-//            cell.textLabel?.text = list[indexPath.row]
-//        }
-
-
-//        for i in 0...2{
-//            if chatBrain.chatArray[i].bot != "" && chatBrain.chatArray[i].person .isEmpty{
-//                print(chatBrain.chatArray[i].bot)
-//            }
-//            if chatBrain.chatArray[i].bot .isEmpty && chatBrain.chatArray[i].person != "" {
-//                print(chatBrain.chatArray[i].person)
-//            }
-//        }
-
-//        for i in 0...2 {
-//            var a = 0
-//            a = i
-//            print("\(a)")
-//        }
-
-//for index in stride(from: 2, to: 0, by: -1) {
-//}
-
-
-//for _ in 0...2 {
-////        chatBrain.nextString()
-//    var num = 0.0
-//    Timer.scheduledTimer(withTimeInterval: 0.1 * num ,repeats: false) { (timer) in
-//        self.chatBrain.count += 1
-//        cell.textLabel?.text = self.chatBrain.getString()
-//    }
-//    num += 1
-//}

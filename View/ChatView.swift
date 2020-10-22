@@ -14,6 +14,7 @@ class ChatView: UIView {
         let chat = UITableView()
         chat.register(ChatTableViewCell.self, forCellReuseIdentifier: "cell")
 //        chat.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        chat.backgroundColor = UIColor(red: 0.94, green: 0.89, blue: 0.87, alpha: 1.00)
         return chat
     }()
     
@@ -21,21 +22,21 @@ class ChatView: UIView {
     
     let border: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor(red: 0.10, green: 0.38, blue: 0.49, alpha: 1.00)
         view.layer.cornerRadius = 10
         return view
     }()
     
     let buttonOne: UIButton = {
         let button = UIButton()
-        button.setTitle("Baik", for: .normal)
+        button.setTitle("Hey Yana, kabarku baik", for: .normal)
         button.tintColor = .white
         return button
     }()
     
     let buttonTwo: UIButton = {
         let button = UIButton()
-        button.setTitle("Buruk", for: .normal)
+        button.setTitle("Hey Yana, kabarku buruk", for: .normal)
         button.tintColor = .white
         return button
     }()
@@ -44,7 +45,7 @@ class ChatView: UIView {
     
     let secondBorder: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor(red: 0.10, green: 0.38, blue: 0.49, alpha: 1.00)
         view.layer.cornerRadius = 10
         return view
     }()
@@ -81,7 +82,7 @@ class ChatView: UIView {
     
     let thirdBorder: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor(red: 0.10, green: 0.38, blue: 0.49, alpha: 1.00)
         view.layer.cornerRadius = 10
         return view
     }()
@@ -104,7 +105,7 @@ class ChatView: UIView {
     
     let forthBorder: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor(red: 0.10, green: 0.38, blue: 0.49, alpha: 1.00)
         view.layer.cornerRadius = 10
         return view
     }()
@@ -127,7 +128,7 @@ class ChatView: UIView {
     }
     
     private func setupView() {
-        self.backgroundColor = .white
+        self.backgroundColor = UIColor(red: 0.94, green: 0.89, blue: 0.87, alpha: 1.00)
         
         self.addSubview(chatTable)
         
@@ -159,81 +160,77 @@ class ChatView: UIView {
         
         self.border.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.safeAreaLayoutGuide)
-            make.left.equalTo(self.safeAreaLayoutGuide).offset(50)
-            make.right.equalTo(self.safeAreaLayoutGuide).offset(-50)
+            make.left.equalTo(self.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(self.safeAreaLayoutGuide).offset(-20)
             make.height.equalTo(80)
-//            make.width.equalTo(self.safeAreaLayoutGuide)
         }
         
         self.buttonOne.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.border)
+            make.left.equalTo(self.border).offset(20)
             make.top.equalTo(self.border).offset(5)
         }
         
         self.buttonTwo.snp.makeConstraints { (make) in
             make.top.equalTo(self.buttonOne.snp.bottom)
-            make.centerX.equalTo(self.border)
+            make.left.equalTo(self.border).offset(20)
         }
         
 // MARK: - Second Border AutoLayout
         
         self.secondBorder.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.safeAreaLayoutGuide)
-            make.left.equalTo(self.safeAreaLayoutGuide).offset(50)
-            make.right.equalTo(self.safeAreaLayoutGuide).offset(-50)
+            make.left.equalTo(self.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(self.safeAreaLayoutGuide).offset(-20)
             make.height.equalTo(150)
-//            make.width.equalTo(self.safeAreaLayoutGuide)
         }
         
         self.buttonThree.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.secondBorder)
+            make.left.equalTo(self.secondBorder).offset(20)
             make.top.equalTo(self.secondBorder).offset(5)
         }
         
         self.buttonFour.snp.makeConstraints { (make) in
             make.top.equalTo(self.buttonThree.snp.bottom)
-            make.centerX.equalTo(self.secondBorder)
+            make.left.equalTo(self.secondBorder).offset(20)
         }
         
         self.buttonFive.snp.makeConstraints { (make) in
             make.top.equalTo(self.buttonFour.snp.bottom)
-            make.centerX.equalTo(self.secondBorder)
+            make.left.equalTo(self.secondBorder).offset(20)
         }
         
         self.buttonSix.snp.makeConstraints { (make) in
             make.top.equalTo(self.buttonFive.snp.bottom)
-            make.centerX.equalTo(self.secondBorder)
+            make.left.equalTo(self.secondBorder).offset(20)
         }
         
 // MARK: - Third Border AutoLayout
         self.thirdBorder.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.safeAreaLayoutGuide)
-            make.left.equalTo(self.safeAreaLayoutGuide).offset(50)
-            make.right.equalTo(self.safeAreaLayoutGuide).offset(-50)
+            make.left.equalTo(self.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(self.safeAreaLayoutGuide).offset(-20)
             make.height.equalTo(80)
-//            make.width.equalTo(self.safeAreaLayoutGuide)
         }
         
         self.buttonSeven.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.thirdBorder)
+            make.left.equalTo(self.thirdBorder).offset(20)
             make.top.equalTo(self.thirdBorder).offset(5)
         }
         
         self.buttonEight.snp.makeConstraints { (make) in
             make.top.equalTo(self.buttonSeven.snp.bottom)
-            make.centerX.equalTo(self.border)
+            make.left.equalTo(self.border).offset(20)
         }
 // MARK: - Forth Border AutoLayout
         self.forthBorder.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.safeAreaLayoutGuide)
-            make.left.equalTo(self.safeAreaLayoutGuide).offset(50)
-            make.right.equalTo(self.safeAreaLayoutGuide).offset(-50)
+            make.left.equalTo(self.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(self.safeAreaLayoutGuide).offset(-20)
             make.height.equalTo(60)
-//            make.width.equalTo(self.safeAreaLayoutGuide)
         }
 
         self.buttonNine.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.forthBorder)
+            make.left.equalTo(self.forthBorder).offset(20)
             make.top.equalTo(self.forthBorder).offset(5)
         }
 

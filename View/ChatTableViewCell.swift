@@ -9,14 +9,28 @@ import UIKit
 
 class ChatTableViewCell: UITableViewCell {
     
-    let listArrayLabel: UILabel = {
+    let leftLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor(red: 0.10, green: 0.38, blue: 0.49, alpha: 1.00)
         return label
     }()
     
-    let textBuble: UIView = {
+    let rightLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        return label
+    }()
+    
+    let leftBubleView: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    
+    let rightBubleView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.10, green: 0.38, blue: 0.49, alpha: 1.00)
         view.layer.cornerRadius = 10
         return view
     }()
@@ -35,10 +49,19 @@ class ChatTableViewCell: UITableViewCell {
             Thread.sleep(forTimeInterval: chatModel.timeInterval)
             
             DispatchQueue.main.async {
-                self.listArrayLabel.text = chatModel.message
+               
+                if chatModel.sender == .bot {
+                    self.leftLabel.text = chatModel.message
+                    self.leftLabel.numberOfLines = 0
+                    self.rightBubleView.isHidden = true
+                }
                 
                 if chatModel.sender == .user {
-                    self.listArrayLabel.textAlignment = .right
+                    self.rightLabel.text = chatModel.message
+                    self.rightLabel.numberOfLines = 0
+                    self.leftLabel.isHidden = true
+                    self.leftBubleView.isHidden = true
+                    self.rightLabel.isHidden = false
                 }
             }
         }
@@ -50,37 +73,41 @@ class ChatTableViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        self.backgroundColor = .white
+        self.backgroundColor = UIColor(red: 0.94, green: 0.89, blue: 0.87, alpha: 1.00)
         
-//        self.addSubview(textBuble)
-//        self.textBuble.addSubview(listArrayLabel)
-        self.addSubview(listArrayLabel)
+        self.addSubview(leftBubleView)
+        self.leftBubleView.addSubview(leftLabel)
+        
+        self.addSubview(rightBubleView)
+        self.rightBubleView.addSubview(rightLabel)
+        
        
-        
-//        self.textBuble.snp.makeConstraints { (make) in
-//            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
-//            make.left.equalTo(self.safeAreaLayoutGuide).offset(20)
-//            make.height.equalTo(self.listArrayLabel).offset(10)
-//            make.width.equalTo(self.listArrayLabel).offset(20)
-//        }
-        
-        self.listArrayLabel.snp.makeConstraints { (make) in
-//            make.centerX.centerY.equalTo(self.textBuble)
-            
-            make.top.bottom.equalTo(self)
-            make.left.equalTo(self).offset(20)
-            make.right.equalTo(self).offset(-20)
-            make.height.equalTo(50)
-               
+        self.leftBubleView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
+            make.left.equalTo(self.safeAreaLayoutGuide).offset(20)
+            make.height.equalTo(self.leftLabel).offset(10)
+            make.width.equalTo(self.leftLabel).offset(10)
         }
         
+        self.leftLabel.snp.makeConstraints { (make) in
+            make.centerX.centerY.equalTo(self.leftBubleView)
+        }
         
+        self.rightBubleView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(self.safeAreaLayoutGuide).offset(-20)
+            make.height.equalTo(self.rightLabel).offset(10)
+            make.width.equalTo(self.rightLabel).offset(10)
+        }
+        
+        self.rightLabel.snp.makeConstraints { (make) in
+            make.centerX.centerY.equalTo(self.rightBubleView)
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
 }
 
 
